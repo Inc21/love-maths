@@ -37,6 +37,9 @@ function runGame(gameType) {
     let num1 = Math.floor(Math.random() * 25) + 1;
     let num2 = Math.floor(Math.random() * 25) + 1;
 
+    let numNew1 = num1 * num2;
+    let numNew2 = num2;
+   
     if (gameType === "addition") {
         displayAdditionQuestion(num1, num2);
     } else if (gameType === "multiply") {
@@ -44,7 +47,7 @@ function runGame(gameType) {
     } else if (gameType === "subtract") {
         displaySubtractQuestion(num1, num2);
     } else if (gameType === "division") {
-        displayDivisionQuestion(num1, num2);
+        displayDivisionQuestion(numNew1, numNew2);
     } else {
         alert(`Unknown game type: ${gameType}`);
         throw `Unknown game type: ${gameType}. Aborting`;
@@ -127,19 +130,19 @@ function displayAdditionQuestion(operand1, operand2) {
 function displaySubtractQuestion(operand1, operand2) {
     document.getElementById("operand1").textContent = operand1 > operand2 ? operand1 : operand2;
     document.getElementById("operand2").textContent = operand2 < operand1 ? operand2 : operand1;
-    document.getElementById("operator").textContent = "-"
+    document.getElementById("operator").textContent = "-";
 }
 
 function displayMultiplyQuestion(operand1, operand2) {
     document.getElementById("operand1").textContent = operand1;
     document.getElementById("operand2").textContent = operand2;
-    document.getElementById("operator").textContent = "x"
+    document.getElementById("operator").textContent = "x";
 }
 
 function displayDivisionQuestion(operand1, operand2) {
-    document.getElementById("operand1").textContent = operand1 > operand2 ? operand1 : operand2;
+    document.getElementById("operand1").textContent = operand1 > operand2 ? operand1 : operand2
     document.getElementById("operand2").textContent = operand2 < operand1 ? operand2 : operand1;
-    document.getElementById("operator").textContent = "/"
+    document.getElementById("operator").textContent = "/";
 }
 
 
