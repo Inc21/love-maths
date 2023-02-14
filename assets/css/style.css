@@ -175,23 +175,56 @@ body {
 
 /* --------- Media queries */
 
-@media (max-width: 414px) {
+@media (max-width: 950px) {
+    .game-area {
+        max-height: 70vh; 
+        padding: 0;
+    }
+
     .controls-area {
-        width: 100%;
+        width: 60%;
+        margin: 10px auto;   
     }
 
     .btn--big {
-        margin: 0 10px;
-        padding: 5px;
-        border: 5px solid;
-        width: 50px;
-        height: 50px;
+        margin: 30px;
+    }
+
+    .btn--gray {
+        margin-top: 0px;
+    }
+
+    .question-area {
+        width: 60%;
+    }  
+    
+    .score-area {
+        margin: 5px auto;
+        width: 60%;
+        font-size: 1rem;
+    }
+    
+}
+
+@media (max-width: 690px) {
+    .controls-area {
+        width: 60%;
+    }
+
+    .btn--big {
+        padding: 14px 0 0 2px;
+        border-radius: 50%;
+        background-color: white;
+        border: 8px solid;
+        width: 70px;
+        height: 70px;
         font-size: 1.5rem;
+        margin: 15px 30px;
     }
 
     .btn--big::after {
         font-size: 0.6rem;
-        left: -0.7rem;
+        top: 1em;
     }
 
     .question-area {
@@ -230,9 +263,16 @@ body {
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 540px) {
+    .controls-area {
+        width: 90%;
+    }
+}
+
+@media (max-width: 380px) {
     .game-area {
         height: 70vh;
+        min-width: 300px;
     }
 
     .controls-area {
