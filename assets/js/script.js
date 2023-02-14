@@ -37,8 +37,11 @@ function runGame(gameType) {
     let num1 = Math.floor(Math.random() * 25) + 1;
     let num2 = Math.floor(Math.random() * 25) + 1;
 
-    let numNew1 = num1 * num2;
-    let numNew2 = num2;
+    let numSmall1 = Math.floor(Math.random() * 10) + 1;
+    let numSmall2 = Math.floor(Math.random() * 10) + 1;
+
+    let numNew1 = numSmall1 * numSmall2;
+    let numNew2 = numSmall2;
    
     if (gameType === "addition") {
         displayAdditionQuestion(num1, num2);
@@ -47,7 +50,7 @@ function runGame(gameType) {
     } else if (gameType === "subtract") {
         displaySubtractQuestion(num1, num2);
     } else if (gameType === "division") {
-        displayDivisionQuestion(numNew1, numNew2);
+         displayDivisionQuestion(numNew1, numNew2);
     } else {
         alert(`Unknown game type: ${gameType}`);
         throw `Unknown game type: ${gameType}. Aborting`;
@@ -144,7 +147,3 @@ function displayDivisionQuestion(operand1, operand2) {
     document.getElementById("operand2").textContent = operand2 < operand1 ? operand2 : operand1;
     document.getElementById("operator").textContent = "/";
 }
-
-
-
-
